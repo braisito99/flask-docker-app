@@ -1,0 +1,969 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; object-src 'none'; script-src resource: chrome:; connect-src https:; img-src https: data: blob: chrome:; style-src 'unsafe-inline';">
+    <meta name="color-scheme" content="light dark">
+    <title data-l10n-id="newtab-page-title"></title>
+    <link rel="icon" type="image/png" href="chrome://branding/content/icon32.png"/>
+    <link rel="localization" href="branding/brand.ftl" />
+    <link rel="localization" href="toolkit/branding/brandings.ftl" />
+    <link rel="localization" href="browser/newtab/newtab.ftl" />
+    <link rel="stylesheet" href="chrome://global/skin/design-system/tokens-brand.css">
+    <link rel="stylesheet" href="chrome://browser/content/contentSearchUI.css" />
+    <link rel="stylesheet" href="chrome://activity-stream/content/css/activity-stream.css" />
+  </head>
+  <!-- Cached: Sun, 24 Nov 2024 13:08:20 GMT -->
+  <body class="activity-stream">
+    <div id="header-asrouter-container" role="presentation"></div>
+    <div id="root">
+      <div><menu class="personalizeButtonWrapper"><span><button class="icon icon-settings personalize-button" data-l10n-id="newtab-personalize-icon-label"></button><div class="customize-menu" role="dialog" data-l10n-id="newtab-personalize-dialog-label"><div class="close-button-wrapper"><button class="close-button" data-l10n-id="newtab-custom-close-button"></button></div><div class="home-section"><div id="shortcuts-section" class="section"><moz-toggle id="shortcuts-toggle" pressed="true" onToggle="function() {
+    [native code]
+}" data-preference="feeds.topsites" data-eventSource="TOP_SITES" data-l10n-id="newtab-custom-shortcuts-toggle" data-l10n-attrs="label, description"></moz-toggle><div><div class="more-info-top-wrapper"><div class="more-information"><select id="row-selector" class="selector" name="row-count" data-preference="topSitesRows" aria-labelledby="custom-shortcuts-title"><option selected="" value="1" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 1}"></option><option value="2" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 2}"></option><option value="3" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 3}"></option><option value="4" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 4}"></option></select><div class="check-wrapper" role="presentation"><input type="checkbox" id="sponsored-shortcuts" class="sponsored-checkbox" checked="" data-preference="showSponsoredTopSites" data-eventSource="SPONSORED_TOP_SITES"/><label class="sponsored" for="sponsored-shortcuts" data-l10n-id="newtab-custom-sponsored-sites"></label></div></div></div></div></div><div id="recent-section" class="section"><label class="switch"><moz-toggle id="highlights-toggle" onToggle="function() {
+    [native code]
+}" data-preference="feeds.section.highlights" data-eventSource="HIGHLIGHTS" data-l10n-id="newtab-custom-recent-toggle" data-l10n-attrs="label, description"></moz-toggle></label></div><span class="divider" role="separator"></span><div><button id="settings-link" class="external-link" data-l10n-id="newtab-custom-settings"></button></div></div></div></span></menu><div class="outer-wrapper ds-outer-wrapper-breakpoint-override visible-logo"><main><div class="non-collapsible-section"><div class="search-wrapper"><div class="logo-and-wordmark"><div class="logo"></div><div class="wordmark"></div></div><div class="search-inner-wrapper"><button class="search-handoff-button" tabindex="-1"><div class="fake-textbox"></div><input type="search" class="fake-editable" tabindex="-1" aria-hidden="true"/><div class="fake-caret"></div></button></div></div></div><div class="body-wrapper on"><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div class="ds-top-sites"><section class="collapsible-section top-sites" data-section-id="topsites"><div class="section-top-bar"><h3 class="section-title-container " style="visibility:hidden"><span class="section-title"><span data-l10n-id="newtab-section-header-topsites"></span></span><span class="learn-more-link-wrapper"></span></h3></div><div><ul class="top-sites-list"><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="http://127.0.0.1:5000/status" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper letter-fallback" data-fallback="1" style="background-color:#FF7139"><div class=""></div></div></div><div class="title"><span dir="auto">127.0.0.1</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;127.0.0.1&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.exploit-db.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="e"><div></div><div class="top-site-icon default-icon" data-fallback="" style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJElEQVQ4T6WTT2gTQRTG35sZNzbWuJP4j7QilvZSERURC4q251I81aPmVGvRgzcvFnuvBy2KCLU5ij3oRbyoVRFRQRQET7VqKdKQZM0a0yTNzDwnMYZEEyn4LsMu7/3m+763i/CfhfXzdL6zbSVXcIMB18Op+eJa2I2AkWjQV3q7AtXFjEnIzc4CTiZy/wI1Au4Mc3i4wDL6Y9QoNgwI7Q461zbOLCdbQWoAGtvSns6pc0hwBJBeMRTPDJh9QCAZ8rsynnzXDILlQbye/JGKRWJA+oYdCFQaERJA+NLCdthb5piAKTmd+fInBL2YHJJO2yOvULhAYC7+1QCgAPGDJd4TInhF85yW0Wgeens1npjV6J2Sh5GRMIYdJKAJIAo29Yu4jEAPEPArAzaHyBYNL60i2eD8+4/7NdBRAOohgOOtIIhwOczFBGxwVyHSqSG9xCsh0qV+4X96f0yDHiSCvfblgAU1bKiqap4BTsr1Xbfw5pvSr6jqKnUy0sGQBm1wYTIwZM8+C2TVRmVPbkeyyOB0OP7tdg1QtlF5sKHQyIF1EFpy/KTqs4rOWCW7kJATo2kk1m317rdrHZfx1JMaIDu6bavOqz2GmyIYCBmibo58Ebh+y5kIqKI+a3XMyhnvuT+20900cOh7+bIGBdmnL1xVWlFSCO1xzcJX01lE+1nZSo1GOjBPuxmGXsv450y97WZBNd1ixVrZZjW8301rBrT6F34CApfdKSUoL9cAAAAASUVORK5CYII=)"></div></div></div><div class="title"><span dir="auto">exploit-db</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;exploit-db&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.youtube.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="Y"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png)"></div></div></div><div class="title"><span dir="auto">YouTube</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;YouTube&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://www.facebook.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="F"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png)"></div></div></div><div class="title"><span dir="auto">Facebook</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Facebook&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://www.wikipedia.org/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="W"><div class="top-site-icon rich-icon" style="background-image:url(chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png)"></div></div></div><div class="title"><span dir="auto">Wikipedia</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Wikipedia&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li></ul><div class="edit-topsites-wrapper"></div></div></section></div></div></div></div><style data-styles="[[null]]"></style></div><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div></div></div></div><style data-styles="[[null]]"></style></div></div></main><aside></aside></div></div>
+    </div>
+    <div id="footer-asrouter-container" role="presentation"></div>
+    <script src="about:home?jscache"></script>
+    <script async type="module" src="chrome://global/content/elements/moz-toggle.mjs"></script>
+  </body>
+</html>
+window.__FROM_STARTUP_CACHE__ = true;
+window.__STARTUP_STATE__ = {
+	"TopSites": {
+		"initialized": true,
+		"rows": [
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.es/?tag=admarketpl0c0-21&ref=pd_sl_6e92403a0aec8708f58fb2997d3b2fe13364cbf994d84983c7920466&mfadid=adm",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=1.0.0&encp=HF3vIpkX7RcdjpkX4ZfY4pDX4QLk1Cx_7ncqjnaz7nIZgGeYJm2uHF3wJnjvJnDufpfUxmIVfBIkxZdWxnzq5FcqIF_RiF_w5CbZ5R4nJZlnJr7Rirxzj%3DwTIG4W7n7vI%3D3wxweNxncuxZdQ3d7nHZ7aIq_uECE4iwcrCC7cjdwGEnvg3%3D4rCkjIfDz9Fnw4inTdCQ73swwSBndiElEPCGvIfcqYBndgE%3DTWFq3RflzDIrvIsnfdCFvefl_SFBIuxr2zj%3DwTIG4W7R7kx%3DwqgG4nGm2WIn8ZIpIN4Cjw4FHkf%3Df_4%3D2aHZlr4Z7n1FcOHZeNGmfkHF4w1pxd4pIqf%3D3OfZjNHFIqHF8rHCjwIn7nfp8d7ReOgClWftaW7RedxZ7vgClWfBIWjGfXiCkXfplnx9EWiCkXfQL_fBIkxrfXgCfX1p8d4Cxr1tIkxredHQkZfCLY4CDr4ZxnHG3ZiF2zfZlafQDd4Zx_7nckxmWzfOIdj%3DqzfBIdImqzfOIZxR2zfC2nJG4kxczvI9Lz5ClniF_miF2z5Clnj9NvIpkW7nuriF3agCbnxR3YHZkW7R7kx%3DTzftIRjpkW7nuriF2zfZDrfClafQxZ7RcdIG7_iF2zfCl_fpDZfCDa4Z2Z1plafQ2W7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zfQbWfCfZ1CH_fOINxpfzCq33fD_D3G34DZe_Cc33fl_DEGNfDZbZCc3csDXD3G34DZekCE3esDdSEC31EllWCD347n4ksFwqgCl_7n4YIFwqgCLW4pqnx%3DXvIpkXfpbr7n3Zx%3D7vIpkXfpl_7n3Zx%3DcqjnwqgClWfpqnI94WHGEqjnwqgCHmfpfnI94WiFzvIpkXfCLr7ncqxmXvIpkXfCqW4CfX4CL_4Z2dfplX4plnxmXVj%3D_dJCkX7nEUEE7fgDX82C4nEw3%2F1cxmJRc5EqXZID_3j9jZ4dlwfqI4IDdm1Dze7C7%3DB9bWDDu6Ckz5CkvTj9NVjkTm4Z3%2FBQwCEFvt4FI4xFIE4lzgB9xrjEqwfq7vsFjvECEaJrwrs94f4RNGHF3vEm4e3D_E49NCFnTwfqIDIODY2R2aHnXiD%3DxaE%3D4QEpeTxrEWslvlscI42mWZEm4_2wvpxnA_3%3D4Z3ndNjEIcsc8W2mIc4dE7jq_Ufk7oIr8XBQj11FERCF3rj%3DAwfqHaipwdDlESitIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7n4WgCbUfQH_ftWr4pfd4YWYfClk1pxTfCfr4CbY1plTftWXfQx_fBWXfplkfBXUIGjkHF8T5tXkiFXwxrbTHncQimIvJ%3DXKHmzUI9EQiGIw&ctag=pd_sl_6e92403a0aec8708f58fb2997d3b2fe13364cbf994d84983c7920466",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkXfCqW4CfX4CLr4pfafCLY4pbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLW4pqnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgClX1CbdfZld1pqr4pDWfClkfBIZJ%3Dzk5F%2BdJF7wxQkX",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/CAP5k4gWqcBGwir7bEEmBWveLMtvldFu-y_kyO3txFA=.9991.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://temuaffiliateprogram.pxf.io/Jz52V7?subId1=119053158743818240&mfadid=adm",
+				"hostname": "temuaffiliateprogram.pxf",
+				"sendAttributionRequest": false,
+				"label": "Temu",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.sfo1.admarketplace.net/ctp?version=1.0.0&encp=HF3vIpkY7RcdjpkX4ZfY4pDX4QLk1Cx_7ncqjnaz7nIZgGeYJm2uHF3wJnjvJnDufpfUxmIVfBIkxZdWxnzq5FcqIF_RiF_w5CbZ5R4nJZlnJr7Rirxzj%3DwTIG4W7n7vI%3D3wxweNxncuxZd4ElDdCD3EsqdDEC31swcPCk3c4ldSDGxnJG4kgG3vJ%3DEZxtIYj9evIpdZIwzqf%3DIOfm2mHCDrICEn4peQ1C3q1%3DfX4ZxYIQwNHnfWHEzQ4%3DcQICLr4C2mIpeqHQfrHFcnI%3DcO4mlrIFIOIQbY4BIWHQkXfpbUftIWjGfYiCkXfplnx9EZfFqzfCbX7Redx%3DqzfC8a1Clnj94ZfCkZfCLY4CDr4ZLnj94WjF8zfZlafQDd4Zxr7nckxmwqgCfX1p8d4Cxr1BINj94TgC8njG3vgClnjFjvgC8nxr7kgClk7ndZj9eKiF3agBkX7nwUjnwqgBkX7R3aiF2zftIojmwqspkW7R7kxnfzftIYj9eogCbnIr2zftIojmwqgCfd1pLrfQfk4tIXjFEYsFwqgClX1CbdfZld1pxkfZLX1p8kftIuxr3kgCbnxR3OJpdnHFXZIBIWj93vIpkW7n3WHmwqgC8WfplZfZqm1C8nHr3_iF2zfCqnHr7wiF2zfCbkfZlnx%3DXvIpkXfpbr7n3Zx%3D7vIpkX4pxW7n3Zx%3DcqjnwqgClkfZlnI94WHGEqjnwqgCLY4CxnI94WiFzvIpkXfZ2Z7ncqxmXvIpkXfCqW4CfX4CL_4Z2dfpld4Q8nxmXVj%3D_dJCkY7nEUEE7fgDX82C4nEw3%2F1cxmFCEdHmuk7C7ti9qd4%3DdtCcxXHk343mvS3lEE2Fc_jR7pEDvvIZ4YJCe_fkdvDnIOIdDYDrEmJwj8EF4X7C7txGefFE4fHQjNfdeuxEE6EkEtsEIe7C7t4Dc4FDdt3%3D4O3cegECDwfqIw3kcfIRNixcHwfq7e7C4l7C4l7R7kJrfz6QTS1Y%2FM6OIviFfz5ClM5ClM5ClM5ClM5ClnHrbzftaXfplW5pxdfCH_5p8Yfpq_4BWX4CHY4plkfYWW5plY4ZqX5plWfC2X5%3D_wjr3NHOWT593vJ%3DEZxtXOHF4oInwTJczQJm_qjF4vjnDy&ctag=119053158743818240",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkXfCqW4CfX4CLr4pfafCLY4pbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4pfX7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkXfCqW4CfX4CL%2B4Z2dfpld4Q8nxmXVjtdUjFdOIG8zfLyy",
+				"sponsored_tile_id": 75169,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/Pe5gM9R0s-OCS2DfKecIG72P_fwfB8I2BSbC1obg0oM=.5716.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.adidas.es?utm_source=admarketplace&utm_medium=SEM&utm_campaign=ES%20CPQV&utm_content=e119053158743818240&cm_mmc=AdieSEM_adMarketplace-_-ES%20CPQV-_-ES%20Privacy-_-privacy+es-_-119053158743818240&cm_mmca1=ES&cm_mmca2=Exact&ds_kid=_dstrackerid&mfadid=adm",
+				"hostname": "adidas",
+				"sendAttributionRequest": false,
+				"label": "Adidas",
+				"show_sponsored_label": true,
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.sfo1.admarketplace.net/ctp?version=1.0.0&encp=HF3vIpkZ7RcdjpkX4ZfY4pDX4QLk1Cx_7ncqjnaz7nIZgGeYJm2uHF3wJnjvJnDufpfUxmIVfBIkxZdWxnzq5FcqIF_RiF_w5CbZ5R4nJZlnJr7Rirxzj%3DwTIG4W7n7vI%3D3wxweNxncuxZd4ElDdCD3EsqdDEC31swcPCk3c4ldSDGxnJG4kgG3vJ%3DEZxtIYj9evIpdZIwzqf%3DIOfm2mHCDrICEn4peQ1C3q1%3DfX4ZxYIQwNHnfWHEzQ4%3DcQICLr4C2mIpeqHQfrHFcnI%3DcO4mlrIFIOIQbY4BIWHQkXfpbUftIWjGfYiCkXfplnx9EZfFqzfCbX7Redx%3DqzfC8a1Clnj94ZfCkZfCLY4CDr4ZLnj94WjF8zfZlafQDd4Zxr7nckxmwqgCfX1p8d4Cxr1BINj94TgC8njG3vgClnjFjvgC8nxr7kgClk7ndZj9eKiF3agBkX7nwUjnwqgBkX7R3aiF2zftIojmwqspkW7R7kxnfzftIYj9eogCbnIr2zftIojmwqgCfd4ZbdfpxdfBIXjFEYsFwqgClX1CbdfZld1pxkfZLX1p8kftIuxr3kgCbnxR3OJpdnHFXZIBIWj93vIpkW7n3WHmwqgC8WfplZfZqm1C8nHr3_iF2zfCqnHr7wiF2z4QLkfBIWJ%3DwqgClWfpxnI94WHnwqgClWfCxnI94WHF3miF2zfCbWfYIqxreNjF3miF2z4CHmfYIqxrevJmwqgClY1plnHF3ZJ%3DwqgClX1CbdfZld1pqr4pDWfCbdfYIZJ%3DzkJREugCfnIF_EDqWzClNefmIFE%3DLaEZ3UDdc_IqcVErfYftDY2qqmBCxYCq_EfnuIBl_%3D4E3uC%3D_I1FD_sqlYCCeGFpwEEww_4nI6HZ3rsp4m7C7tj%3DE32FE%3DDG4ZHZ4I4n4d2kz7sw7Eir4BJm_VIp4YfkAwfq7dBnfmfF2k3kjG3pwfJw3wfGjIfRelxDX7DrjeFn2_iGbwfq7eiqv8D%3DvTjqEFDwj_iGNijRIIi%3DX64Ej1stDY2quw7C7%3D3cjYf9w_EQNGEtDY3R36fODY2n76ip3r3tDY2QE_4R3GBmI%3DiQwICc3%2FDODY2Rvv4RwB7C7%3DCD2rDBDY2ODY2QcnIBDY3qXtiZ49iF3TD9jQJ94vsF34Fq2_EweB7C7txRbX3kz5HE3OxF2ZBF_lJDdp3%3DN%3DimxWFqHZE9enEF354Rv%2F1FwTsR4k4qxZHRNY3l%2FaHD3PCm4pDmvgfqqr7C7%3Dx94cCn7mx%3DIOJq7S7C7%3D7C7%3D1C76xODY2Rjn4G7RfQLwfqIEBdcl3R8wfqIIBdveHkNaDZjaIQ3lCceZj%3D_w4ODY2wlwfk2nxR3VxZkS1Y%2FM6QTS7nwvHZkufCTufCTufCTufCTufBIQxpkW5QlafpbT4Z2mfZfTfQ8WfCqW5pld4pLX4CfW5pbTfC8r1ClTfCbX4plTJnErj%3DcO5tWTj%3DwTIG4W5%3D7NHmuniFXTGm4VJn3dHmwmI2yy&ctag=119053158743818240",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkXfCqW4CfX4CLr4pfafCLY4pbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCHa4plnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgClX1CbdfZld1pqr4pDWfCbdfYIZJ%3Dzk5F%2BdJF7wxQkZ",
+				"sponsored_tile_id": 74633,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/nFUUIjR5m5f480r8x_bEUOaP7-oE_ONq6RWrZ27fzB8=.13961.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 1950,
+				"guid": "THUWAFkp8Riz",
+				"lastVisitDate": 1732453400795,
+				"title": null,
+				"url": "http://127.0.0.1:5000/status",
+				"type": "history",
+				"screenshot": "moz-page-thumb://thumbnails/?url=http%3A%2F%2F127.0.0.1%3A5000%2Fstatus&revision=2929",
+				"hostname": "127.0.0.1",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": "DstB-2UmgIeL",
+				"frecency": 163,
+				"guid": "cEYO9AlBWHtX",
+				"lastVisitDate": 1728415945865,
+				"title": "Exploit Database - Exploits for Penetration Testers, Researchers, and Ethical Hackers",
+				"url": "https://www.exploit-db.com/",
+				"type": "history",
+				"favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJElEQVQ4T6WTT2gTQRTG35sZNzbWuJP4j7QilvZSERURC4q251I81aPmVGvRgzcvFnuvBy2KCLU5ij3oRbyoVRFRQRQET7VqKdKQZM0a0yTNzDwnMYZEEyn4LsMu7/3m+763i/CfhfXzdL6zbSVXcIMB18Op+eJa2I2AkWjQV3q7AtXFjEnIzc4CTiZy/wI1Au4Mc3i4wDL6Y9QoNgwI7Q461zbOLCdbQWoAGtvSns6pc0hwBJBeMRTPDJh9QCAZ8rsynnzXDILlQbye/JGKRWJA+oYdCFQaERJA+NLCdthb5piAKTmd+fInBL2YHJJO2yOvULhAYC7+1QCgAPGDJd4TInhF85yW0Wgeens1npjV6J2Sh5GRMIYdJKAJIAo29Yu4jEAPEPArAzaHyBYNL60i2eD8+4/7NdBRAOohgOOtIIhwOczFBGxwVyHSqSG9xCsh0qV+4X96f0yDHiSCvfblgAU1bKiqap4BTsr1Xbfw5pvSr6jqKnUy0sGQBm1wYTIwZM8+C2TVRmVPbkeyyOB0OP7tdg1QtlF5sKHQyIF1EFpy/KTqs4rOWCW7kJATo2kk1m317rdrHZfx1JMaIDu6bavOqz2GmyIYCBmibo58Ebh+y5kIqKI+a3XMyhnvuT+20900cOh7+bIGBdmnL1xVWlFSCO1xzcJX01lE+1nZSo1GOjBPuxmGXsv450y97WZBNd1ixVrZZjW8301rBrT6F34CApfdKSUoL9cAAAAASUVORK5CYII=",
+				"faviconLength": 605,
+				"faviconRef": "",
+				"faviconSize": 16,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJElEQVQ4T6WTT2gTQRTG35sZNzbWuJP4j7QilvZSERURC4q251I81aPmVGvRgzcvFnuvBy2KCLU5ij3oRbyoVRFRQRQET7VqKdKQZM0a0yTNzDwnMYZEEyn4LsMu7/3m+763i/CfhfXzdL6zbSVXcIMB18Op+eJa2I2AkWjQV3q7AtXFjEnIzc4CTiZy/wI1Au4Mc3i4wDL6Y9QoNgwI7Q461zbOLCdbQWoAGtvSns6pc0hwBJBeMRTPDJh9QCAZ8rsynnzXDILlQbye/JGKRWJA+oYdCFQaERJA+NLCdthb5piAKTmd+fInBL2YHJJO2yOvULhAYC7+1QCgAPGDJd4TInhF85yW0Wgeens1npjV6J2Sh5GRMIYdJKAJIAo29Yu4jEAPEPArAzaHyBYNL60i2eD8+4/7NdBRAOohgOOtIIhwOczFBGxwVyHSqSG9xCsh0qV+4X96f0yDHiSCvfblgAU1bKiqap4BTsr1Xbfw5pvSr6jqKnUy0sGQBm1wYTIwZM8+C2TVRmVPbkeyyOB0OP7tdg1QtlF5sKHQyIF1EFpy/KTqs4rOWCW7kJATo2kk1m317rdrHZfx1JMaIDu6bavOqz2GmyIYCBmibo58Ebh+y5kIqKI+a3XMyhnvuT+20900cOh7+bIGBdmnL1xVWlFSCO1xzcJX01lE+1nZSo1GOjBPuxmGXsv450y97WZBNd1ixVrZZjW8301rBrT6F34CApfdKSUoL9cAAAAASUVORK5CYII=",
+				"smallFaviconLength": 605,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fwww.exploit-db.com%2F&revision=6928",
+				"hostname": "exploit-db",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.facebook.com/",
+				"hostname": "facebook",
+				"sendAttributionRequest": false,
+				"label": "Facebook",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/facebook-com.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.wikipedia.org/",
+				"hostname": "wikipedia",
+				"sendAttributionRequest": false,
+				"label": "Wikipedia",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico",
+				"typedBonus": true
+			}
+		],
+		"editForm": null,
+		"showSearchShortcutsForm": false,
+		"searchShortcuts": [
+			{
+				"keyword": "@google",
+				"shortURL": "google",
+				"url": "https://google.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/google-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"
+			},
+			{
+				"keyword": "@bing",
+				"shortURL": "bing",
+				"url": "https://bing.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/bing-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/bing-com.ico"
+			},
+			{
+				"keyword": "@duckduckgo",
+				"shortURL": "duckduckgo",
+				"url": "https://duckduckgo.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/duckduckgo-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/duckduckgo-com.ico"
+			},
+			{
+				"keyword": "@wikipedia",
+				"shortURL": "wikipedia",
+				"url": "https://wikipedia.org",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico"
+			}
+		],
+		"sov": {
+			"ready": true,
+			"positions": [
+				{
+					"position": 1,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 2,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 3,
+					"assignedPartner": "amp"
+				}
+			]
+		},
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"App": {
+		"initialized": true,
+		"locale": "en-US",
+		"isForStartupCache": true,
+		"customizeMenuVisible": false,
+		"links": [
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.es/?tag=admarketpl0c0-21&ref=pd_sl_6e92403a0aec8708f58fb2997d3b2fe13364cbf994d84983c7920466&mfadid=adm",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=1.0.0&encp=HF3vIpkX7RcdjpkX4ZfY4pDX4QLk1Cx_7ncqjnaz7nIZgGeYJm2uHF3wJnjvJnDufpfUxmIVfBIkxZdWxnzq5FcqIF_RiF_w5CbZ5R4nJZlnJr7Rirxzj%3DwTIG4W7n7vI%3D3wxweNxncuxZdQ3d7nHZ7aIq_uECE4iwcrCC7cjdwGEnvg3%3D4rCkjIfDz9Fnw4inTdCQ73swwSBndiElEPCGvIfcqYBndgE%3DTWFq3RflzDIrvIsnfdCFvefl_SFBIuxr2zj%3DwTIG4W7R7kx%3DwqgG4nGm2WIn8ZIpIN4Cjw4FHkf%3Df_4%3D2aHZlr4Z7n1FcOHZeNGmfkHF4w1pxd4pIqf%3D3OfZjNHFIqHF8rHCjwIn7nfp8d7ReOgClWftaW7RedxZ7vgClWfBIWjGfXiCkXfplnx9EWiCkXfQL_fBIkxrfXgCfX1p8d4Cxr1tIkxredHQkZfCLY4CDr4ZxnHG3ZiF2zfZlafQDd4Zx_7nckxmWzfOIdj%3DqzfBIdImqzfOIZxR2zfC2nJG4kxczvI9Lz5ClniF_miF2z5Clnj9NvIpkW7nuriF3agCbnxR3YHZkW7R7kx%3DTzftIRjpkW7nuriF2zfZDrfClafQxZ7RcdIG7_iF2zfCl_fpDZfCDa4Z2Z1plafQ2W7ndZj92zftIYj%3D7TgFINJ94w7Rekj%3DwqgCbnI9eQiF2zfQbWfCfZ1CH_fOINxpfzCq33fD_D3G34DZe_Cc33fl_DEGNfDZbZCc3csDXD3G34DZekCE3esDdSEC31EllWCD347n4ksFwqgCl_7n4YIFwqgCLW4pqnx%3DXvIpkXfpbr7n3Zx%3D7vIpkXfpl_7n3Zx%3DcqjnwqgClWfpqnI94WHGEqjnwqgCHmfpfnI94WiFzvIpkXfCLr7ncqxmXvIpkXfCqW4CfX4CL_4Z2dfplX4plnxmXVj%3D_dJCkX7nEUEE7fgDX82C4nEw3%2F1cxmJRc5EqXZID_3j9jZ4dlwfqI4IDdm1Dze7C7%3DB9bWDDu6Ckz5CkvTj9NVjkTm4Z3%2FBQwCEFvt4FI4xFIE4lzgB9xrjEqwfq7vsFjvECEaJrwrs94f4RNGHF3vEm4e3D_E49NCFnTwfqIDIODY2R2aHnXiD%3DxaE%3D4QEpeTxrEWslvlscI42mWZEm4_2wvpxnA_3%3D4Z3ndNjEIcsc8W2mIc4dE7jq_Ufk7oIr8XBQj11FERCF3rj%3DAwfqHaipwdDlESitIYj%3DzZgB%2FM6QTS1Y%2FniFwQgBkX1YkX1YkX1YkX1YkX7n4WgCbUfQH_ftWr4pfd4YWYfClk1pxTfCfr4CbY1plTftWXfQx_fBWXfplkfBXUIGjkHF8T5tXkiFXwxrbTHncQimIvJ%3DXKHmzUI9EQiGIw&ctag=pd_sl_6e92403a0aec8708f58fb2997d3b2fe13364cbf994d84983c7920466",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkXfCqW4CfX4CLr4pfafCLY4pbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCLW4pqnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgClX1CbdfZld1pqr4pDWfClkfBIZJ%3Dzk5F%2BdJF7wxQkX",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/CAP5k4gWqcBGwir7bEEmBWveLMtvldFu-y_kyO3txFA=.9991.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://temuaffiliateprogram.pxf.io/Jz52V7?subId1=119053158743818240&mfadid=adm",
+				"hostname": "temuaffiliateprogram.pxf",
+				"sendAttributionRequest": false,
+				"label": "Temu",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.sfo1.admarketplace.net/ctp?version=1.0.0&encp=HF3vIpkY7RcdjpkX4ZfY4pDX4QLk1Cx_7ncqjnaz7nIZgGeYJm2uHF3wJnjvJnDufpfUxmIVfBIkxZdWxnzq5FcqIF_RiF_w5CbZ5R4nJZlnJr7Rirxzj%3DwTIG4W7n7vI%3D3wxweNxncuxZd4ElDdCD3EsqdDEC31swcPCk3c4ldSDGxnJG4kgG3vJ%3DEZxtIYj9evIpdZIwzqf%3DIOfm2mHCDrICEn4peQ1C3q1%3DfX4ZxYIQwNHnfWHEzQ4%3DcQICLr4C2mIpeqHQfrHFcnI%3DcO4mlrIFIOIQbY4BIWHQkXfpbUftIWjGfYiCkXfplnx9EZfFqzfCbX7Redx%3DqzfC8a1Clnj94ZfCkZfCLY4CDr4ZLnj94WjF8zfZlafQDd4Zxr7nckxmwqgCfX1p8d4Cxr1BINj94TgC8njG3vgClnjFjvgC8nxr7kgClk7ndZj9eKiF3agBkX7nwUjnwqgBkX7R3aiF2zftIojmwqspkW7R7kxnfzftIYj9eogCbnIr2zftIojmwqgCfd1pLrfQfk4tIXjFEYsFwqgClX1CbdfZld1pxkfZLX1p8kftIuxr3kgCbnxR3OJpdnHFXZIBIWj93vIpkW7n3WHmwqgC8WfplZfZqm1C8nHr3_iF2zfCqnHr7wiF2zfCbkfZlnx%3DXvIpkXfpbr7n3Zx%3D7vIpkX4pxW7n3Zx%3DcqjnwqgClkfZlnI94WHGEqjnwqgCLY4CxnI94WiFzvIpkXfZ2Z7ncqxmXvIpkXfCqW4CfX4CL_4Z2dfpld4Q8nxmXVj%3D_dJCkY7nEUEE7fgDX82C4nEw3%2F1cxmFCEdHmuk7C7ti9qd4%3DdtCcxXHk343mvS3lEE2Fc_jR7pEDvvIZ4YJCe_fkdvDnIOIdDYDrEmJwj8EF4X7C7txGefFE4fHQjNfdeuxEE6EkEtsEIe7C7t4Dc4FDdt3%3D4O3cegECDwfqIw3kcfIRNixcHwfq7e7C4l7C4l7R7kJrfz6QTS1Y%2FM6OIviFfz5ClM5ClM5ClM5ClM5ClnHrbzftaXfplW5pxdfCH_5p8Yfpq_4BWX4CHY4plkfYWW5plY4ZqX5plWfC2X5%3D_wjr3NHOWT593vJ%3DEZxtXOHF4oInwTJczQJm_qjF4vjnDy&ctag=119053158743818240",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkXfCqW4CfX4CLr4pfafCLY4pbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgClW4pfX7ReTHF4wJFEUjtdvIpkXfpbr7ncq5G4wJ%3DEQj%3DwVJOdvIpkXfCqW4CfX4CL%2B4Z2dfpld4Q8nxmXVjtdUjFdOIG8zfLyy",
+				"sponsored_tile_id": 75169,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/Pe5gM9R0s-OCS2DfKecIG72P_fwfB8I2BSbC1obg0oM=.5716.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.adidas.es?utm_source=admarketplace&utm_medium=SEM&utm_campaign=ES%20CPQV&utm_content=e119053158743818240&cm_mmc=AdieSEM_adMarketplace-_-ES%20CPQV-_-ES%20Privacy-_-privacy+es-_-119053158743818240&cm_mmca1=ES&cm_mmca2=Exact&ds_kid=_dstrackerid&mfadid=adm",
+				"hostname": "adidas",
+				"sendAttributionRequest": false,
+				"label": "Adidas",
+				"show_sponsored_label": true,
+				"sponsored_position": 3,
+				"sponsored_click_url": "https://bridge.sfo1.admarketplace.net/ctp?version=1.0.0&encp=HF3vIpkZ7RcdjpkX4ZfY4pDX4QLk1Cx_7ncqjnaz7nIZgGeYJm2uHF3wJnjvJnDufpfUxmIVfBIkxZdWxnzq5FcqIF_RiF_w5CbZ5R4nJZlnJr7Rirxzj%3DwTIG4W7n7vI%3D3wxweNxncuxZd4ElDdCD3EsqdDEC31swcPCk3c4ldSDGxnJG4kgG3vJ%3DEZxtIYj9evIpdZIwzqf%3DIOfm2mHCDrICEn4peQ1C3q1%3DfX4ZxYIQwNHnfWHEzQ4%3DcQICLr4C2mIpeqHQfrHFcnI%3DcO4mlrIFIOIQbY4BIWHQkXfpbUftIWjGfYiCkXfplnx9EZfFqzfCbX7Redx%3DqzfC8a1Clnj94ZfCkZfCLY4CDr4ZLnj94WjF8zfZlafQDd4Zxr7nckxmwqgCfX1p8d4Cxr1BINj94TgC8njG3vgClnjFjvgC8nxr7kgClk7ndZj9eKiF3agBkX7nwUjnwqgBkX7R3aiF2zftIojmwqspkW7R7kxnfzftIYj9eogCbnIr2zftIojmwqgCfd4ZbdfpxdfBIXjFEYsFwqgClX1CbdfZld1pxkfZLX1p8kftIuxr3kgCbnxR3OJpdnHFXZIBIWj93vIpkW7n3WHmwqgC8WfplZfZqm1C8nHr3_iF2zfCqnHr7wiF2z4QLkfBIWJ%3DwqgClWfpxnI94WHnwqgClWfCxnI94WHF3miF2zfCbWfYIqxreNjF3miF2z4CHmfYIqxrevJmwqgClY1plnHF3ZJ%3DwqgClX1CbdfZld1pqr4pDWfCbdfYIZJ%3DzkJREugCfnIF_EDqWzClNefmIFE%3DLaEZ3UDdc_IqcVErfYftDY2qqmBCxYCq_EfnuIBl_%3D4E3uC%3D_I1FD_sqlYCCeGFpwEEww_4nI6HZ3rsp4m7C7tj%3DE32FE%3DDG4ZHZ4I4n4d2kz7sw7Eir4BJm_VIp4YfkAwfq7dBnfmfF2k3kjG3pwfJw3wfGjIfRelxDX7DrjeFn2_iGbwfq7eiqv8D%3DvTjqEFDwj_iGNijRIIi%3DX64Ej1stDY2quw7C7%3D3cjYf9w_EQNGEtDY3R36fODY2n76ip3r3tDY2QE_4R3GBmI%3DiQwICc3%2FDODY2Rvv4RwB7C7%3DCD2rDBDY2ODY2QcnIBDY3qXtiZ49iF3TD9jQJ94vsF34Fq2_EweB7C7txRbX3kz5HE3OxF2ZBF_lJDdp3%3DN%3DimxWFqHZE9enEF354Rv%2F1FwTsR4k4qxZHRNY3l%2FaHD3PCm4pDmvgfqqr7C7%3Dx94cCn7mx%3DIOJq7S7C7%3D7C7%3D1C76xODY2Rjn4G7RfQLwfqIEBdcl3R8wfqIIBdveHkNaDZjaIQ3lCceZj%3D_w4ODY2wlwfk2nxR3VxZkS1Y%2FM6QTS7nwvHZkufCTufCTufCTufCTufBIQxpkW5QlafpbT4Z2mfZfTfQ8WfCqW5pld4pLX4CfW5pbTfC8r1ClTfCbX4plTJnErj%3DcO5tWTj%3DwTIG4W5%3D7NHmuniFXTGm4VJn3dHmwmI2yy&ctag=119053158743818240",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkXfCqW4CfX4CLr4pfafCLY4pbnj9wWIBdvIpkY7n4YIFckiGIw5FwqgCHa4plnx%3DXNHmEuIF%2Bk5FwqgClWfpxnHF2uxmETIF4kiFzU5FwqgClX1CbdfZld1pqr4pDWfCbdfYIZJ%3Dzk5F%2BdJF7wxQkZ",
+				"sponsored_tile_id": 74633,
+				"partner": "amp",
+				"favicon": "https://tiles-cdn.prod.ads.prod.webservices.mozgcp.net/nFUUIjR5m5f480r8x_bEUOaP7-oE_ONq6RWrZ27fzB8=.13961.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 1950,
+				"guid": "THUWAFkp8Riz",
+				"lastVisitDate": 1732453400795,
+				"title": null,
+				"url": "http://127.0.0.1:5000/status",
+				"type": "history",
+				"screenshot": "moz-page-thumb://thumbnails/?url=http%3A%2F%2F127.0.0.1%3A5000%2Fstatus&revision=2929",
+				"hostname": "127.0.0.1",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": "DstB-2UmgIeL",
+				"frecency": 163,
+				"guid": "cEYO9AlBWHtX",
+				"lastVisitDate": 1728415945865,
+				"title": "Exploit Database - Exploits for Penetration Testers, Researchers, and Ethical Hackers",
+				"url": "https://www.exploit-db.com/",
+				"type": "history",
+				"favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJElEQVQ4T6WTT2gTQRTG35sZNzbWuJP4j7QilvZSERURC4q251I81aPmVGvRgzcvFnuvBy2KCLU5ij3oRbyoVRFRQRQET7VqKdKQZM0a0yTNzDwnMYZEEyn4LsMu7/3m+763i/CfhfXzdL6zbSVXcIMB18Op+eJa2I2AkWjQV3q7AtXFjEnIzc4CTiZy/wI1Au4Mc3i4wDL6Y9QoNgwI7Q461zbOLCdbQWoAGtvSns6pc0hwBJBeMRTPDJh9QCAZ8rsynnzXDILlQbye/JGKRWJA+oYdCFQaERJA+NLCdthb5piAKTmd+fInBL2YHJJO2yOvULhAYC7+1QCgAPGDJd4TInhF85yW0Wgeens1npjV6J2Sh5GRMIYdJKAJIAo29Yu4jEAPEPArAzaHyBYNL60i2eD8+4/7NdBRAOohgOOtIIhwOczFBGxwVyHSqSG9xCsh0qV+4X96f0yDHiSCvfblgAU1bKiqap4BTsr1Xbfw5pvSr6jqKnUy0sGQBm1wYTIwZM8+C2TVRmVPbkeyyOB0OP7tdg1QtlF5sKHQyIF1EFpy/KTqs4rOWCW7kJATo2kk1m317rdrHZfx1JMaIDu6bavOqz2GmyIYCBmibo58Ebh+y5kIqKI+a3XMyhnvuT+20900cOh7+bIGBdmnL1xVWlFSCO1xzcJX01lE+1nZSo1GOjBPuxmGXsv450y97WZBNd1ixVrZZjW8301rBrT6F34CApfdKSUoL9cAAAAASUVORK5CYII=",
+				"faviconLength": 605,
+				"faviconRef": "",
+				"faviconSize": 16,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACJElEQVQ4T6WTT2gTQRTG35sZNzbWuJP4j7QilvZSERURC4q251I81aPmVGvRgzcvFnuvBy2KCLU5ij3oRbyoVRFRQRQET7VqKdKQZM0a0yTNzDwnMYZEEyn4LsMu7/3m+763i/CfhfXzdL6zbSVXcIMB18Op+eJa2I2AkWjQV3q7AtXFjEnIzc4CTiZy/wI1Au4Mc3i4wDL6Y9QoNgwI7Q461zbOLCdbQWoAGtvSns6pc0hwBJBeMRTPDJh9QCAZ8rsynnzXDILlQbye/JGKRWJA+oYdCFQaERJA+NLCdthb5piAKTmd+fInBL2YHJJO2yOvULhAYC7+1QCgAPGDJd4TInhF85yW0Wgeens1npjV6J2Sh5GRMIYdJKAJIAo29Yu4jEAPEPArAzaHyBYNL60i2eD8+4/7NdBRAOohgOOtIIhwOczFBGxwVyHSqSG9xCsh0qV+4X96f0yDHiSCvfblgAU1bKiqap4BTsr1Xbfw5pvSr6jqKnUy0sGQBm1wYTIwZM8+C2TVRmVPbkeyyOB0OP7tdg1QtlF5sKHQyIF1EFpy/KTqs4rOWCW7kJATo2kk1m317rdrHZfx1JMaIDu6bavOqz2GmyIYCBmibo58Ebh+y5kIqKI+a3XMyhnvuT+20900cOh7+bIGBdmnL1xVWlFSCO1xzcJX01lE+1nZSo1GOjBPuxmGXsv450y97WZBNd1ixVrZZjW8301rBrT6F34CApfdKSUoL9cAAAAASUVORK5CYII=",
+				"smallFaviconLength": 605,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fwww.exploit-db.com%2F&revision=6928",
+				"hostname": "exploit-db",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.youtube.com/",
+				"hostname": "youtube",
+				"sendAttributionRequest": false,
+				"label": "YouTube",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/youtube-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/youtube-com.png",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.facebook.com/",
+				"hostname": "facebook",
+				"sendAttributionRequest": false,
+				"label": "Facebook",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/facebook-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/facebook-com.ico",
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.wikipedia.org/",
+				"hostname": "wikipedia",
+				"sendAttributionRequest": false,
+				"label": "Wikipedia",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico",
+				"typedBonus": true
+			}
+		],
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"ASRouter": {
+		"initialized": false
+	},
+	"Prefs": {
+		"initialized": true,
+		"values": {
+			"default.sites": "https://www.youtube.com/,https://www.facebook.com/,https://www.wikipedia.org/,https://www.reddit.com/,https://www.amazon.com/,https://twitter.com/",
+			"feeds.section.topstories.options": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"hidden\":true,\"provider_icon\":\"chrome://global/skin/icons/pocket.svg\",\"provider_name\":\"Pocket\",\"read_more_endpoint\":\"https://getpocket.com/explore/trending?src=fx_new_tab\",\"stories_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_on\",\"stories_referrer\":\"https://getpocket.com/recommendations\",\"topics_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US\",\"show_spocs\":true}",
+			"feeds.topsites": true,
+			"hideTopSitesTitle": false,
+			"showSponsored": true,
+			"system.showSponsored": true,
+			"showSponsoredTopSites": true,
+			"system.showWeather": false,
+			"showWeather": true,
+			"weather.query": "",
+			"weather.locationSearchEnabled": false,
+			"weather.temperatureUnits": "f",
+			"weather.display": "simple",
+			"pocketCta": "{\"cta_button\":\"\",\"cta_text\":\"\",\"cta_url\":\"\",\"use_cta\":false}",
+			"showSearch": true,
+			"topSitesRows": 1,
+			"telemetry": true,
+			"telemetry.ut.events": false,
+			"telemetry.structuredIngestion.endpoint": "https://incoming.telemetry.mozilla.org/submit",
+			"section.highlights.includeVisited": true,
+			"section.highlights.includeBookmarks": true,
+			"section.highlights.includePocket": true,
+			"section.highlights.includeDownloads": true,
+			"section.highlights.rows": 1,
+			"section.topstories.rows": 1,
+			"sectionOrder": "topsites,topstories,highlights",
+			"newtabWallpapers.enabled": false,
+			"newtabWallpapers.v2.enabled": false,
+			"newtabWallpapers.highlightEnabled": false,
+			"newtabWallpapers.highlightDismissed": false,
+			"newtabWallpapers.highlightSeenCounter": 0,
+			"newtabWallpapers.highlightHeaderText": "",
+			"newtabWallpapers.highlightContentText": "",
+			"newtabWallpapers.highlightCtaText": "",
+			"newtabWallpapers.wallpaper-light": "",
+			"newtabWallpapers.wallpaper-dark": "",
+			"newtabWallpapers.wallpaper": "",
+			"improvesearch.noDefaultSearchTile": true,
+			"improvesearch.topSiteSearchShortcuts.searchEngines": "google",
+			"improvesearch.topSiteSearchShortcuts.havePinned": "",
+			"asrouter.devtoolsEnabled": false,
+			"asrouter.providers.onboarding": "{\"id\":\"onboarding\",\"type\":\"local\",\"localProvider\":\"OnboardingMessageProvider\",\"enabled\":true,\"exclude\":[]}",
+			"discoverystream.flight.blocks": "{}",
+			"discoverystream.config": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"collapsible\":true,\"enabled\":true}",
+			"discoverystream.endpoints": "https://getpocket.cdn.mozilla.net/,https://firefox-api-proxy.cdn.mozilla.net/,https://spocs.getpocket.com/",
+			"discoverystream.isCollectionDismissible": true,
+			"discoverystream.onboardingExperience.dismissed": false,
+			"discoverystream.region-basic-layout": false,
+			"discoverystream.spoc.impressions": "{}",
+			"discoverystream.endpointSpocsClear": "https://spocs.getpocket.com/user",
+			"discoverystream.rec.impressions": "{}",
+			"showRecentSaves": true,
+			"feeds.aboutpreferences": true,
+			"feeds.newtabinit": true,
+			"feeds.places": true,
+			"feeds.prefs": true,
+			"feeds.sections": true,
+			"feeds.section.highlights": false,
+			"feeds.system.topstories": false,
+			"feeds.systemtick": true,
+			"feeds.telemetry": true,
+			"feeds.favicon": true,
+			"feeds.system.topsites": true,
+			"feeds.recommendationprovider": true,
+			"feeds.discoverystreamfeed": true,
+			"feeds.wallpaperfeed": true,
+			"feeds.weatherfeed": true,
+			"isPrivateBrowsingEnabled": true,
+			"platform": "linux",
+			"region": "ES",
+			"fxa_endpoint": "https://accounts.firefox.com/",
+			"appUpdateChannel": "esr",
+			"improvesearch.topSiteSearchShortcuts": true,
+			"mayHaveSponsoredTopSites": true,
+			"improvesearch.handoffToAwesomebar": true,
+			"featureConfig": {
+				"customizationMenuEnabled": null,
+				"topSitesContileEnabled": true
+			},
+			"pocketConfig": {
+				"spocPositions": "1,5,7,11,18,20",
+				"spocTopsitesPositions": "2",
+				"contileTopsitesPositions": "0,1,2",
+				"spocAdTypes": "",
+				"spocZoneIds": "",
+				"spocTopsitesAdTypes": "",
+				"spocTopsitesZoneIds": "",
+				"spocTopsitesPlacementEnabled": true,
+				"spocSiteId": "",
+				"widgetPositions": "",
+				"hybridLayout": false,
+				"hideCardBackground": false,
+				"fourCardLayout": false,
+				"newFooterSection": false,
+				"saveToPocketCard": true,
+				"saveToPocketCardRegions": "",
+				"hideDescriptions": false,
+				"hideDescriptionsRegions": "",
+				"compactGrid": false,
+				"compactImages": false,
+				"imageGradient": false,
+				"titleLines": 3,
+				"descLines": 3,
+				"onboardingExperience": false,
+				"essentialReadsHeader": false,
+				"editorsPicksHeader": false,
+				"recentSavesEnabled": false,
+				"readTime": true,
+				"newSponsoredLabel": false,
+				"sendToPocket": true,
+				"recsPersonalized": false,
+				"spocsPersonalized": true,
+				"spocsCacheTimeout": null,
+				"ctaButtonSponsors": "",
+				"ctaButtonVariant": "",
+				"spocMessageVariant": "",
+				"regionStoriesConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionBffConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionStoriesBlock": "",
+				"localeListConfig": "",
+				"regionSpocsConfig": "US,CA,DE,GB,FR,IT,ES",
+				"regionWeatherConfig": "",
+				"topSitesContileSovEnabled": true,
+				"pocketFeedParameters": ""
+			},
+			"logowordmark.alwaysVisible": true,
+			"feeds.section.topstories": false,
+			"discoverystream.enabled": true,
+			"discoverystream.sponsored-collections.enabled": false,
+			"discoverystream.hardcoded-basic-layout": false,
+			"discoverystream.personalization.enabled": true,
+			"discoverystream.personalization.override": false,
+			"discoverystream.personalization.modelKeys": "nb_model_arts_and_entertainment, nb_model_autos_and_vehicles, nb_model_beauty_and_fitness, nb_model_blogging_resources_and_services, nb_model_books_and_literature, nb_model_business_and_industrial, nb_model_computers_and_electronics, nb_model_finance, nb_model_food_and_drink, nb_model_games, nb_model_health, nb_model_hobbies_and_leisure, nb_model_home_and_garden, nb_model_internet_and_telecom, nb_model_jobs_and_education, nb_model_law_and_government, nb_model_online_communities, nb_model_people_and_society, nb_model_pets_and_animals, nb_model_real_estate, nb_model_reference, nb_model_science, nb_model_shopping, nb_model_sports, nb_model_travel",
+			"discoverystream.spocs-endpoint": "",
+			"discoverystream.spocs-endpoint-query": "",
+			"newNewtabExperience.colors": "#0090ED,#FF4F5F,#2AC3A2,#FF7139,#A172FF,#FFA437,#FF2A8A"
+		}
+	},
+	"Dialog": {
+		"visible": false,
+		"data": {}
+	},
+	"Sections": [
+		{
+			"title": {
+				"id": "newtab-section-header-stories"
+			},
+			"rows": [],
+			"enabled": false,
+			"id": "topstories",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recommended-by-header-generic"
+				},
+				"descString": {
+					"id": "home-prefs-recommended-by-description-generic"
+				},
+				"nestedPrefs": [
+					{
+						"name": "showSponsored",
+						"titleString": "home-prefs-recommended-by-option-sponsored-stories",
+						"icon": "icon-info",
+						"eventSource": "POCKET_SPOCS"
+					}
+				],
+				"learnMore": {
+					"link": {
+						"href": "https://getpocket.com/firefox/new_tab_learn_more",
+						"id": "home-prefs-recommended-by-learn-more"
+					}
+				},
+				"collapsed": false,
+				"feed": "feeds.section.topstories"
+			},
+			"shouldHidePref": true,
+			"eventSource": "TOP_STORIES",
+			"icon": "chrome://global/skin/icons/pocket.svg",
+			"learnMore": {
+				"link": {
+					"href": "https://getpocket.com/firefox/new_tab_learn_more",
+					"message": {
+						"id": "newtab-pocket-learn-more"
+					}
+				}
+			},
+			"compactCards": false,
+			"rowsPref": "section.topstories.rows",
+			"maxRows": 4,
+			"availableLinkMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-topstories-generic"
+				},
+				"icon": "check"
+			},
+			"shouldSendImpressionStats": true,
+			"dedupeFrom": [
+				"highlights"
+			],
+			"options": {
+				"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+				"hidden": true,
+				"provider_icon": "chrome://global/skin/icons/pocket.svg",
+				"provider_name": "Pocket",
+				"read_more_endpoint": "https://getpocket.com/explore/trending?src=fx_new_tab",
+				"stories_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_on",
+				"stories_referrer": "https://getpocket.com/recommendations",
+				"topics_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US",
+				"show_spocs": true
+			},
+			"contextMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"initialized": false
+		},
+		{
+			"title": {
+				"id": "newtab-section-header-recent-activity"
+			},
+			"rows": [],
+			"enabled": false,
+			"id": "highlights",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recent-activity-header"
+				},
+				"descString": {
+					"id": "home-prefs-recent-activity-description"
+				},
+				"nestedPrefs": [
+					{
+						"name": "section.highlights.includeVisited",
+						"titleString": "home-prefs-highlights-option-visited-pages"
+					},
+					{
+						"name": "section.highlights.includeBookmarks",
+						"titleString": "home-prefs-highlights-options-bookmarks"
+					},
+					{
+						"name": "section.highlights.includeDownloads",
+						"titleString": "home-prefs-highlights-option-most-recent-download"
+					},
+					{
+						"name": "section.highlights.includePocket",
+						"titleString": "home-prefs-highlights-option-saved-to-pocket",
+						"hidden": false
+					}
+				],
+				"collapsed": false,
+				"feed": "feeds.section.highlights"
+			},
+			"shouldHidePref": false,
+			"eventSource": "HIGHLIGHTS",
+			"icon": "chrome://global/skin/icons/highlights.svg",
+			"compactCards": true,
+			"rowsPref": "section.highlights.rows",
+			"maxRows": 4,
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-highlights"
+				},
+				"icon": "chrome://global/skin/icons/highlights.svg"
+			},
+			"shouldSendImpressionStats": false,
+			"options": {},
+			"initialized": false
+		}
+	],
+	"Pocket": {
+		"isUserLoggedIn": null,
+		"pocketCta": {},
+		"waitingForSpoc": true
+	},
+	"Personalization": {
+		"lastUpdated": null,
+		"initialized": false
+	},
+	"DiscoveryStream": {
+		"config": {
+			"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+			"collapsible": true,
+			"enabled": true
+		},
+		"layout": [
+			{
+				"width": 12,
+				"components": [
+					{
+						"type": "TopSites",
+						"header": {
+							"title": {
+								"id": "newtab-section-header-topsites"
+							}
+						},
+						"placement": {
+							"name": "sponsored-topsites",
+							"ad_types": [
+								3120
+							],
+							"zone_ids": [
+								280143
+							]
+						},
+						"spocs": {
+							"probability": 1,
+							"prefs": [
+								"showSponsoredTopSites"
+							],
+							"positions": [
+								{
+									"index": 2
+								}
+							]
+						},
+						"properties": {}
+					},
+					{
+						"type": "Message",
+						"essentialReadsHeader": false,
+						"editorsPicksHeader": false,
+						"header": {
+							"title": {
+								"id": "newtab-section-header-stories"
+							},
+							"subtitle": "",
+							"link_text": {
+								"id": "newtab-pocket-learn-more"
+							},
+							"link_url": "https://getpocket.com/firefox/new_tab_learn_more",
+							"icon": "chrome://global/skin/icons/pocket.svg"
+						},
+						"properties": {
+							"spocMessageVariant": ""
+						},
+						"styles": {
+							".ds-message": "margin-bottom: -20px"
+						}
+					},
+					{
+						"type": "CardGrid",
+						"properties": {
+							"items": 21,
+							"hybridLayout": false,
+							"hideCardBackground": false,
+							"fourCardLayout": false,
+							"compactGrid": false,
+							"essentialReadsHeader": false,
+							"editorsPicksHeader": false,
+							"onboardingExperience": false,
+							"ctaButtonSponsors": [
+								""
+							],
+							"ctaButtonVariant": "",
+							"spocMessageVariant": ""
+						},
+						"widgets": {
+							"positions": [],
+							"data": [
+								{
+									"type": "TopicsWidget"
+								}
+							]
+						},
+						"cta_variant": "link",
+						"header": {
+							"title": ""
+						},
+						"placement": {
+							"name": "spocs",
+							"ad_types": [
+								3617
+							],
+							"zone_ids": [
+								217758,
+								217995
+							]
+						},
+						"feed": {
+							"embed_reference": null,
+							"url": "https://firefox-api-proxy.cdn.mozilla.net/desktop/v1/recommendations?locale=$locale&region=$region&count=30"
+						},
+						"spocs": {
+							"probability": 1,
+							"positions": [
+								{
+									"index": 1
+								},
+								{
+									"index": 5
+								},
+								{
+									"index": 7
+								},
+								{
+									"index": 11
+								},
+								{
+									"index": 18
+								},
+								{
+									"index": 20
+								}
+							]
+						}
+					},
+					{
+						"type": "Navigation",
+						"newFooterSection": false,
+						"properties": {
+							"alignment": "left-align",
+							"links": [
+								{
+									"name": "Self improvement",
+									"url": "https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Food",
+									"url": "https://getpocket.com/explore/food?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Entertainment",
+									"url": "https://getpocket.com/explore/entertainment?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Health & fitness",
+									"url": "https://getpocket.com/explore/health?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Science",
+									"url": "https://getpocket.com/explore/science?utm_source=pocket-newtab"
+								},
+								{
+									"name": "More recommendations â€º",
+									"url": "https://getpocket.com/explore?utm_source=pocket-newtab"
+								}
+							],
+							"extraLinks": [
+								{
+									"name": "Career",
+									"url": "https://getpocket.com/explore/career?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Technology",
+									"url": "https://getpocket.com/explore/technology?utm_source=pocket-newtab"
+								}
+							],
+							"privacyNoticeURL": {
+								"url": "https://www.mozilla.org/privacy/firefox/#recommend-relevant-content",
+								"title": {
+									"id": "newtab-section-menu-privacy-notice"
+								}
+							}
+						},
+						"header": {
+							"title": {
+								"id": "newtab-pocket-read-more"
+							}
+						},
+						"styles": {
+							".ds-navigation": "margin-top: -10px;"
+						}
+					}
+				]
+			}
+		],
+		"isPrivacyInfoModalVisible": false,
+		"isCollectionDismissible": true,
+		"feeds": {
+			"data": {},
+			"loaded": false
+		},
+		"spocs": {
+			"spocs_endpoint": "https://spocs.getpocket.com/spocs",
+			"lastUpdated": 1732453396708,
+			"data": {
+				"settings": {
+					"feature_flags": {
+						"collections": false,
+						"spoc_v2": true
+					},
+					"spocsPerNewTabs": 1,
+					"domainAffinityParameterSets": {
+						"default": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 1,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized-domains": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 10,
+							"perfectFrequencyVisits": 1,
+							"recencyFactor": 0.5
+						}
+					},
+					"timeSegments": [
+						{
+							"id": "week-1",
+							"startTime": 432000,
+							"endTime": 0,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-2",
+							"startTime": 864000,
+							"endTime": 432000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-3",
+							"startTime": 1296000,
+							"endTime": 864000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-4",
+							"startTime": 1728000,
+							"endTime": 1296000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-5",
+							"startTime": 2160000,
+							"endTime": 1728000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-6",
+							"startTime": 2592000,
+							"endTime": 2160000,
+							"weightPosition": 1
+						}
+					]
+				},
+				"spocs": {
+					"title": "",
+					"context": "",
+					"items": []
+				},
+				"sponsored-topsites": {
+					"title": "",
+					"context": "",
+					"items": []
+				}
+			},
+			"loaded": true,
+			"frequency_caps": [],
+			"blocked": [],
+			"placements": [
+				{
+					"name": "sponsored-topsites",
+					"ad_types": [
+						3120
+					],
+					"zone_ids": [
+						280143
+					]
+				},
+				{
+					"name": "spocs",
+					"ad_types": [
+						3617
+					],
+					"zone_ids": [
+						217758,
+						217995
+					]
+				}
+			]
+		},
+		"experimentData": {
+			"utmSource": "pocket-newtab"
+		},
+		"recentSavesData": [],
+		"isUserLoggedIn": false,
+		"recentSavesEnabled": false,
+		"pocketButtonEnabled": true,
+		"saveToPocketCard": true,
+		"hideDescriptions": false,
+		"compactImages": false,
+		"imageGradient": false,
+		"newSponsoredLabel": false,
+		"titleLines": 3,
+		"descLines": 3,
+		"readTime": true
+	},
+	"Search": {
+		"fakeFocus": false,
+		"hide": false
+	},
+	"Wallpapers": {
+		"wallpaperList": [],
+		"highlightSeenCounter": {
+			"value": 0
+		},
+		"categories": []
+	},
+	"Weather": {
+		"initialized": false,
+		"lastUpdated": null,
+		"query": "",
+		"suggestions": [],
+		"locationData": {
+			"city": "",
+			"adminArea": "",
+			"country": ""
+		},
+		"searchActive": false,
+		"locationSearchString": "",
+		"suggestedLocations": []
+	}
+};
+
+D@K„           gC%DG“rUÿÿÿÿ       :about:home alt-data 1;10955,script version 20241008174909   Ï™
